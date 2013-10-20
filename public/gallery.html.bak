@@ -1,0 +1,46 @@
+<html>
+<head>
+<style>
+div.center{
+ width:1000px;
+ height:auto;
+ background-color:#4598A9;
+ margin-left:auto;
+ margin-right:auto;
+}
+div.display-item{
+ width:300px;
+ height:300px;
+ float:left;
+ background-color:#555555;
+}
+</style>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(window).scroll(function() {
+		if (($(window).scrollTop()+document.body.clientHeight)==$(window).height()){
+			//alert('hore');
+			$.ajax({
+			    url:"/gallery",
+				method:"GET",
+				sucess:function(data){alert(data);}
+			});
+		}
+	});
+});
+</script>
+</head>
+<body>
+<div class="center">
+<div class="display-item"></div>
+<div class="display-item"></div>
+<div class="display-item"></div>
+<div class="display-item"></div>
+<div class="display-item"></div>
+<div class="display-item"></div>
+<div class="display-item"></div>
+</div>
+
+</body>
+</html>
